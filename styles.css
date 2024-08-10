@@ -1,0 +1,119 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-section {
+    max-width: 350px;
+    width: 100%;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 175px;
+    margin: 35px 0;
+}
+
+.textbox {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    background-color: #0095f6;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.or-divider .line {
+    flex: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+}
+
+.or-divider p {
+    margin: 0 10px;
+    color: #8e8e8e;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.fb-login {
+    background-color: #4267b2;
+    margin-top: 0;
+    border-radius: 5px;
+}
+
+.signup-section {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #8e8e8e;
+}
+
+.signup-section a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 5px;
+    color: #0095f6;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: right;
+}
+
+.report-text {
+    font-size: 10px;
+    color: #8e8e8e;
+    margin-top: 15px;
+}
+
+.report-text a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: bold;
+}
